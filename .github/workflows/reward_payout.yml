@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "pr_creator=$(curl -s -X GET \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            # "https://api.github.com/repos/Pinaka-Pani-18/testing/pulls/${{ github.event.pull_request.number }}" | jq -r '.user.login')" >> $GITHUB_ENV
+            # "https://api.github.com/repos/Ajiboso-Adeola/testing/pulls/${{ github.event.pull_request.number }}" | jq -r '.user.login')" >> $GITHUB_ENV
 
       - name: Initiate Payout
         if: ${{ github.event.pull_request.merged }} == true
@@ -30,9 +30,9 @@ jobs:
             \"chimoneys\": [
               {
                 \"email\": \"$USER\",
-                \"phone\": \"+916300760104\",
+                \"phone\": \"+2348066404937\",
                 \"valueInUSD\": $AMOUNT,
-                \"twitter\": \"@pinakapani06\"
+                \"twitter\": \"@dde_olla\"
               }
             ]
           }"
@@ -57,5 +57,5 @@ jobs:
             curl -s -X POST \
               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
               -d "{\"body\":\"Payment link: <${payout_link}>\"}" \
-              "https://github.com/Sirjamesarua/Chimoney-Payout-Workflow-after-PR-is-merged/issues/${{ github.event.pull_request.number }}/comments"
+              "https://github.com/Ajiboso-Adeola/Chimoney-Payout-Workflow-after-PR-is-merged/issues/${{ github.event.pull_request.number }}/comments"
           fi
